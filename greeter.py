@@ -9,8 +9,9 @@ def ask_required_name_part(prompt: str) -> str:
         print("Поле не может быть пустым.")
 
 
-def build_greeting(last_name: str, first_name: str, patronymic: str) -> str:
-    return f"Здравствуйте, {last_name} {first_name} {patronymic}!"
+def build_greeting(last_name: str, first_name: str, patronymic: str = "") -> str:
+    full_name = " ".join(part for part in (last_name, first_name, patronymic) if part)
+    return f"Здравствуйте, {full_name}!"
 
 
 def show_environment_info() -> None:
@@ -24,7 +25,7 @@ def main() -> None:
     # ФИО
     a: str = ask_required_name_part("Введите вашу фамилию: ")
     b: str = ask_required_name_part("Введите ваше имя: ")
-    c: str = ask_required_name_part("Введите ваше отчество: ")
+    c: str = input("Введите ваше отчество (если есть): ").strip()
 
     # Вывод приветствия
     print(f"\n{build_greeting(a, b, c)}")
