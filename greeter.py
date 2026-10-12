@@ -2,6 +2,7 @@ import platform
 
 
 def ask_required_name_part(prompt: str) -> str:
+    """Запрашивает непустую часть имени."""
     while True:
         value = input(prompt).strip()
         if value:
@@ -10,11 +11,13 @@ def ask_required_name_part(prompt: str) -> str:
 
 
 def build_greeting(last_name: str, first_name: str, patronymic: str = "") -> str:
+    """Собирает приветствие, не добавляя лишний пробел для пустого отчества."""
     full_name = " ".join(part for part in (last_name, first_name, patronymic) if part)
     return f"Здравствуйте, {full_name}!"
 
 
 def show_environment_info() -> None:
+    """Показывает сведения о системе и версии Python."""
     print("\n--- Информация о среде разработки ---")
     print(f"ОС: {platform.system()}")
     print(f"Версия Python: {platform.python_version()}")
@@ -22,6 +25,7 @@ def show_environment_info() -> None:
 
 
 def main() -> None:
+    """Запускает диалог с пользователем."""
     # ФИО
     a: str = ask_required_name_part("Введите вашу фамилию: ")
     b: str = ask_required_name_part("Введите ваше имя: ")
@@ -33,4 +37,5 @@ def main() -> None:
     show_environment_info()
 
 
-main()
+if __name__ == "__main__":
+    main()
