@@ -1,3 +1,6 @@
+import platform
+
+
 def ask_required_name_part(prompt: str) -> str:
     while True:
         value = input(prompt).strip()
@@ -12,7 +15,7 @@ def build_greeting(last_name: str, first_name: str, patronymic: str) -> str:
 
 def show_environment_info() -> None:
     print("\n--- Информация о среде разработки ---")
-    print("ОС: Windows 11")
+    print(f"ОС: {platform.system()}")
     print("Инструменты: Используются рекомендованные Miniconda и VSCode.")
 
 
