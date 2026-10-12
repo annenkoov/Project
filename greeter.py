@@ -16,6 +16,7 @@ def build_greeting(last_name: str, first_name: str, patronymic: str) -> str:
 def show_environment_info() -> None:
     print("\n--- Информация о среде разработки ---")
     print(f"ОС: {platform.system()}")
+    print(f"Версия Python: {platform.python_version()}")
     print("Инструменты: Используются рекомендованные Miniconda и VSCode.")
 
 
