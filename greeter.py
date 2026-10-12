@@ -10,6 +10,12 @@ def build_greeting(last_name: str, first_name: str, patronymic: str) -> str:
     return f"Здравствуйте, {last_name} {first_name} {patronymic}!"
 
 
+def show_environment_info() -> None:
+    print("\n--- Информация о среде разработки ---")
+    print("ОС: Windows 11")
+    print("Инструменты: Используются рекомендованные Miniconda и VSCode.")
+
+
 def main() -> None:
     # ФИО
     a: str = ask_required_name_part("Введите вашу фамилию: ")
@@ -19,10 +25,7 @@ def main() -> None:
     # Вывод приветствия
     print(f"\n{build_greeting(a, b, c)}")
 
-    # Информация о среде разработки
-    print("\n--- Информация о среде разработки ---")
-    print("ОС: Windows 11")
-    print("Инструменты: Используются рекомендованные Miniconda и VSCode.")
+    show_environment_info()
 
 
 main()
